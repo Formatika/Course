@@ -24,7 +24,8 @@ class ProductPage(BasePage):
             f"Название продукта в сообщении '{product_name_in_msg}' не соответствует реальному названию продукта '{product_name}'"
 
     def should_be_message_add_to_basket(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_ADD_TO_BASKET), "Cообщение о добавлении товара в корзину отсутствует"
+        assert self.is_element_present(
+            *ProductPageLocators.MESSAGE_ADD_TO_BASKET), "Cообщение о добавлении товара в корзину отсутствует"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADD_TO_BASKET), \
@@ -33,6 +34,3 @@ class ProductPage(BasePage):
     def message_add_to_cart_is_disappeared(self):
         assert self.is_disappeared(
             *ProductPageLocators.MESSAGE_ADD_TO_BASKET), "Cообщение о добавлении товара в корзину не исчезло"
-
-
-
